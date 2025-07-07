@@ -49,7 +49,7 @@ client.on('message', async msg => {
 
             // إذا كان عضو عادي، أرسل الرسالة إلى بايثون للفحص
             // يجب تغيير localhost إلى رابط خدمة البايثون على Render إذا كنت تستخدم استضافة منفصلة
-            const response = await axios.post('https://whatsapp-bot-python.onrender.com/check', data);{(
+            const response = await axios.post('https://whatsapp-bot-python.onrender.com/check', data);({
                 message: msg.body,
                 type: msg.type,
                 from: msg.from,

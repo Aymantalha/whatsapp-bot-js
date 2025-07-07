@@ -49,13 +49,16 @@ client.on('message', async msg => {
 
             // إذا كان عضو عادي، أرسل الرسالة إلى بايثون للفحص
             // يجب تغيير localhost إلى رابط خدمة البايثون على Render إذا كنت تستخدم استضافة منفصلة
-            const response = await axios.post('https://whatsapp-bot-python-k7lc.onrender.com', data);({
+            const data = {
                 message: msg.body,
                 type: msg.type,
                 from: msg.from,
                 sender_id: senderId,
                 message_id: msg.id._serialized
-            });
+            };
+
+            // لاحظ إضافة /check لنهاية الرابط (حسب كود بايثون)
+            const response = await axios.post('https://whatsapp-bot-python-k7lc.onrender.com/check', data);
 
             if (response.data.action === "kick") {
                 // حذف الرسالة أولاً

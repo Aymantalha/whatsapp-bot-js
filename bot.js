@@ -58,7 +58,7 @@ client.on('message', async msg => {
             };
 
             // لاحظ إضافة /check لنهاية الرابط (حسب كود بايثون)
-            const response = await axios.post('https://whatsapp-bot-python-k7lc.onrender.com/check', data);
+            const response = await axios.post('https://whatsapp-bot-python-k7lc.onrender.com', data);
 
             if (response.data.action === "kick") {
                 // حذف الرسالة أولاً
@@ -87,7 +87,7 @@ client.on('message', async msg => {
 client.initialize();
 
 // سيرفر بسيط على المنفذ المطلوب من Render
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
 app.get('/', (req, res) => {
     res.send('Whatsapp bot is running!');
 });

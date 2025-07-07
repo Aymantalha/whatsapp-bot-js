@@ -8,7 +8,7 @@ const app = express();
 const client = new Client({
     authStrategy: new LocalAuth(),
     puppeteer: {
-        args: ['--no-sandbox', '--disable-setuid-sandbox']            ذ
+        args: ['--no-sandbox', '--disable-setuid-sandbox']          
     }
 });
 

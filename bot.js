@@ -87,7 +87,7 @@ client.on('message', async msg => {
 client.initialize();
 
 // سيرفر بسيط على المنفذ المطلوب من Render
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3000;
 app.get('/', (req, res) => {
     res.send('Whatsapp bot is running!');
 });

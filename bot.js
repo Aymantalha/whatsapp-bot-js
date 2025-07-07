@@ -8,7 +8,7 @@ const app = express();
 const client = new Client({
     authStrategy: new LocalAuth(),
     puppeteer: {
-        args: ['--no-sandbox', '--disable-setuid-sandbox']
+        args: ['--no-sandbox', '--disable-setuid-sandbox']            ذ
     }
 });
 
@@ -58,7 +58,7 @@ client.on('message', async msg => {
             };
 
             // لاحظ إضافة /check لنهاية الرابط (حسب كود بايثون)
-            const response = await axios.post('https://whatsapp-bot-python-k7lc.onrender.com', data);
+            const response = await axios.post('https://whatsapp-bot-python-k7lc.onrender.com/check', data);
 
             if (response.data.action === "kick") {
                 // حذف الرسالة أولاً
